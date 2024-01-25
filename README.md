@@ -85,7 +85,7 @@ npm run reinstall
 npm run --force reinstall
 ```
 
-## Shadcn UI
+## Tailwind CSS
 
 Install Tailwind CSS
 
@@ -94,10 +94,26 @@ npm install --save-dev tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
+Using 'clsx' or 'classnames' with 'tailwind-merge'
 
 ```shell
 npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
+```
+
+`src/lib/utils.ts`:
+
+```typescript
+import clsx, { ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes));
+```
+
+## Shadcn UI
+
+Beautifully designed components that you can copy and paste into your apps.
+
+```shell
+npx shadcn-ui@latest init
 ```
 
 Add icon library
@@ -106,21 +122,17 @@ Add icon library
 npm install lucide-react @radix-ui/react-icons
 ```
 
-Use the add command to add components and dependencies to your project.
-
-```shell
-npx shadcn-ui@latest init
-```
-
-```shell
-npx shadcn-ui@latest add
-npx shadcn-ui@latest add [component]
-```
-
 Adding dark mode
 
 ```shell
 npm install next-themes
+```
+
+Use the add command to add components and dependencies to your project.
+
+```shell
+npx shadcn-ui@latest add
+npx shadcn-ui@latest add [component]
 ```
 
 ## Schema Validation
@@ -135,8 +147,6 @@ npm install zod @hookform/resolvers
 ## ESLint
 
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-
-Installation:
 
 ```shell
 npm install --save-dev eslint eslint-plugin-react eslint-plugin-react-hooks
