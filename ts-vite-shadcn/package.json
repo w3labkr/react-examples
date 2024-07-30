@@ -1,6 +1,5 @@
 {
-  "name": "react-ninja",
-  "description": "React Ninja is a starter template for React typescript based on shadcn/ui",
+  "name": "ts-vite-shadcn",
   "private": true,
   "version": "0.0.0",
   "type": "module",
